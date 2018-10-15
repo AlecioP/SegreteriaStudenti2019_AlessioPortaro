@@ -27,9 +27,12 @@ public class MainJDBC {
 
 		DAOFactory factory = DAOFactory.getDAOFactory(DAOFactory.POSTGRESQL);
 		UtilDao util = factory.getUtilDAO();
-		util.dropDatabase();
 		
+		System.out.println("GOING TO DROP DB");
+		util.dropDatabase();
+		System.out.println("DB DROPPED");
 		util.createDatabase();		
+		System.out.println("DB CREATED");
 		
 		StudenteDao studenteDao = factory.getStudenteDAO();
 		ScuolaDao scuolaDao = factory.getScuolaDAO();

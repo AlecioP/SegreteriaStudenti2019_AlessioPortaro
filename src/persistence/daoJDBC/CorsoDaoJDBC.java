@@ -1,4 +1,4 @@
-package persistence._JDBC_Dao;
+package persistence.daoJDBC;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

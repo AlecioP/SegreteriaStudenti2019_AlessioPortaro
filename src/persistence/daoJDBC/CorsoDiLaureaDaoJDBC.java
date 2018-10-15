@@ -1,4 +1,4 @@
-package persistence._JDBC_Dao;
+package persistence.daoJDBC;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,7 +40,7 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao{
 		try {
 
 			/*CREATES NEW CDL IN THE DB*/
-			String insert_sql = "insert into corsodilaurea(codice, nome, dipartimento_codice) value (?,?,?)";
+			String insert_sql = "insert into corsodilaurea(codice, nome, dipartimento_codice) values (?,?,?)";
 			PreparedStatement statement = connection.prepareStatement(insert_sql);
 			Long id = IdBroker.getId(connection);
 			corsoDiLaurea.setCodice(id);
@@ -69,14 +69,14 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao{
 				ResultSet resultSet = exist_sql.executeQuery();
 
 				if(resultSet.next()) {
-					String update_sql_s = "update afferisce SET corsodilaurea_codice = ? where id = ?";
+					String update_sql_s = "UPDATE afferisce SET corsodilaurea_codice = ? WHERE id = ?";
 					PreparedStatement update_sql = connection.prepareStatement(update_sql_s);
 					update_sql.setLong(1, corsoDiLaurea.getCodice());
 					update_sql.setLong(2, resultSet.getLong("id")); //specify column name
 					update_sql.executeUpdate();
 				}
 				else {
-					String insert_sql_s = "INSERT afferisce(id, corso_codice, corsodilaurea_codice) values (?,?,?)";
+					String insert_sql_s = "INSERT INTO afferisce(id, corso_codice, corsodilaurea_codice) values (?,?,?)";
 					PreparedStatement insert_afferisce_sql = connection.prepareStatement(insert_sql_s);
 					insert_afferisce_sql.setLong(1, IdBroker.getId(connection));
 					insert_afferisce_sql.setLong(2, c.getCodice());
@@ -221,6 +221,7 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao{
 		} catch (SQLException e) {
 			try {
 				connection.rollback();
+				return null;
 			} catch (SQLException e1) {
 				throw new PersistenceException(e.getMessage());
 			}
@@ -231,7 +232,6 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao{
 				throw new PersistenceException(e.getMessage());
 			}
 		}
-		return null;
 	}
 
 	@Override
@@ -304,6 +304,46 @@ public class CorsoDiLaureaDaoJDBC implements CorsoDiLaureaDao{
 		}catch(SQLException e) {
 			try {
 				connection.rollback();
+			} catch (SQLException e1) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				throw new PersistenceException(e.getMessage());
+			}
+		}
+	}
+
+	@Override
+	public List<CorsoDiLaurea> findByReferencedKey(Dipartimento dip) {
+		Connection connection = ds.getConnection();
+		String select_CDL_sql_s = "SELECT corsodilaurea.codice as CodiceCDL,"
+				+ "corsodilaurea.nome as NomeCDL,"
+				+ "corsodilaurea.dipartimento_codice as DipartimentoCDL "
+				+ "FROM corsodilaurea "
+				+ "WHERE corsodilaurea.dipartimento_codice = ?";
+		
+		try {
+			PreparedStatement select_CDL_sql = connection.prepareStatement(select_CDL_sql_s);
+			select_CDL_sql.setLong(1, dip.getCodice());
+			ResultSet result_select_CDL_sql = select_CDL_sql.executeQuery();
+			ArrayList<CorsoDiLaurea> cdls = new ArrayList<CorsoDiLaurea>();
+			while(result_select_CDL_sql.next()) {
+				CorsoDiLaureaProxy cdl = new CorsoDiLaureaProxy(ds);
+				cdl.setCodice(result_select_CDL_sql.getLong("CodiceCDL"));
+				cdl.setNome(result_select_CDL_sql.getString("NomeCDL"));
+				cdl.setDipartimento(dip);
+				
+				cdls.add(cdl);
+			}
+			
+			return cdls;
+		} catch (SQLException e) {
+			try {
+				connection.rollback();
+				return null;
 			} catch (SQLException e1) {
 				throw new PersistenceException(e.getMessage());
 			}

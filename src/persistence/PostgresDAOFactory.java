@@ -2,16 +2,16 @@ package persistence;
 
 
 
-import persistence._JDBC_Dao.CorsoDaoJDBC;
-import persistence._JDBC_Dao.CorsoDiLaureaDaoJDBC;
-import persistence._JDBC_Dao.DipartimentoDaoJDBC;
-import persistence._JDBC_Dao.ScuolaDaoJDBC;
-import persistence._JDBC_Dao.StudenteDaoJDBC;
 import persistence.dao.CorsoDao;
 import persistence.dao.CorsoDiLaureaDao;
 import persistence.dao.DipartimentoDao;
 import persistence.dao.ScuolaDao;
 import persistence.dao.StudenteDao;
+import persistence.daoJDBC.CorsoDaoJDBC;
+import persistence.daoJDBC.CorsoDiLaureaDaoJDBC;
+import persistence.daoJDBC.DipartimentoDaoJDBC;
+import persistence.daoJDBC.ScuolaDaoJDBC;
+import persistence.daoJDBC.StudenteDaoJDBC;
 
 class PostgresDAOFactory extends DAOFactory {
 

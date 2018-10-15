@@ -11,8 +11,8 @@ import model.Corso;
 import model.Studente;
 import persistence.DataSource;
 import persistence.PersistenceException;
-import persistence._JDBC_Dao.StudenteDaoJDBC;
 import persistence.dao.StudenteDao;
+import persistence.daoJDBC.StudenteDaoJDBC;
 
 
 public class CorsoProxy extends Corso {
