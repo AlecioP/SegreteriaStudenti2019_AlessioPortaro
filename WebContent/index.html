@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Gestione Segreteria</title>
+
+<!-- Style -->
+<link rel="stylesheet" href="css/indexStyle.css" type="text/css" />
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css"
+	type="text/css" />
+<!-- Scripts -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/jumbotron.js"></script>
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<!-- <nav class="navbar navbar-inverse"> -->
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a href="#">Home</a></li>
+			<li class="nav-item dropdown"><a href="#"
+				class="nav-link dropdown-toggle" data-toggle="dropdown">Studenti</a>
+				<ul class="dropdown-menu">
+					<li><a href="gestioneStudenti/studenti.html"
+						class="dropdown-item">Elenco Studenti</a></li>
+					<li>Studenti di un certo corso</li>
+					<li><a href="gestioneStudenti/iscriviStudenti.html"
+						class="dropdown-item">Iscrivi uno studente</a></li>
+				</ul></li>
+			<li class="nav-item"><a href="#">Corsi</a></li>
+			<li class="nav-item"><a href="#">Corsi di laurea</a></li>
+			<li class="nav-item"><a href="#">Dipartimenti</a></li>
+		</ul>
+	</nav>
+	<header class="row">
+		<span class="col-lg-1 col-md-1 col-sm-1"></span>
+		<figure class="col-lg-3 col-md-3 col-sm-3">
+			<a href="img/segreteria.jpg"> <img src="img/segreteria.jpg"
+				class="img-thumbnail img-rounded" />
+			</a>
+			<figcaption>La nostra segreteria studenti</figcaption>
+		</figure>
+		<h1 class="col-lg-4 col-md-4 col-sm-4">Portale segreteria
+			studenti</h1>
+
+		<aside class="col-lg-3 col-md-3 col-sm-3">
+			<figure>
+				<a href="http://www.unical.it"> <img src="img/logo_unical.png"
+					class="img-thumbnail img-rounded" />
+				</a>
+			</figure>
+		</aside>
+	</header>
+
+	<div class="row">
+		<div class="col-lg-1 col-md-1 col-sm-1"></div>
+		<h2 id="welcome" class="col-lg-10 col-md-10 col-sm-10">Benvenuti
+			nel portale di gestione delle Segreterie Studenti</h2>
+	</div>
+	<div class="row">
+		<div class="col-lg-1 col-md-1 col-sm-1"></div>
+		<p class="inline-p col-lg-10 col-md-10 col-sm-10">Utilizza il menu
+			in alto per navigare tra le varie sezioni della pagina</p>
+	</div>
+	<div class="row">
+		<div class="col-lg-1 col-md-1 col-sm-1"></div>
+		<p class="inline-p col-lg-10 col-md-10 col-sm-10">Ti auguriamo una
+			felice navigazione</p>
+	</div>
+
+
+	<section class="row">
+		<div id="padder" class="col-lg-1 col-md-1 col-sm-1"></div>
+		<div id="jt-container" class="col-lg-10 col-md-10 col-sm-10">
+			<div class="my-jumbotron">
+				<article id="art-1">
+					<header>Dicono di noi</header>
+					La segreteria &eacute; un servizio di riferimento che serve per...
+				</article>
+				<article id="art-2">
+					<header>Centro ICT di Ateneo</header>
+					Dalla pagine accessibile da <a href="www.unical.it">questo link</a>
+				</article>
+				<article class="selected-art" id="art-3">
+					<header>
+						J.F. Kennedy <strong>from </strong><a
+							href="https://it.wikipedia.org/wiki/John_Fitzgerald_Kennedy">Wikipedia</a>
+					</header>
+					John Fitzgerald Kennedy, comunemente chiamato John Kennedy o solo
+					JFK (Brookline, 29 maggio 1917 &ndash; Dallas, 22 novembre 1963),
+					&eacute; stato un politico statunitense ed il 35&ordm; presidente
+					degli Stati Uniti d'America. Candidato del Partito Democratico,
+					vinse le elezioni presidenziali del 1960 diventando il 35&ordm;
+					presidente degli Stati Uniti d'America, carica che ha mantenuto dal
+					20 gennaio 1961 fino al suo assassinio nel 1963, quando gli
+					subentr&oacute; il vicepresidente Lyndon B. Johnson. Kennedy, di
+					origine irlandese, noto anche con il diminutivo "Jack", &eacute;
+					stato il primo presidente degli Stati Uniti d'America di religione
+					cattolica e il pi&uacute; giovane in assoluto. Fu anche il primo
+					presidente statunitense a essere nato nel XX secolo e il pi&uacute;
+					giovane a morire ricoprendo la carica (gli sopravvissero tre
+					predecessori: Hoover, Truman ed Eisenhower). La sua breve
+					presidenza, in epoca di guerra fredda, fu segnata da alcuni eventi
+					molto rilevanti: la crisi di Berlino del 1961 con la costruzione
+					del Muro, la corsa alla Luna, la conquista dello spazio,
+					l'invasione di Cuba e il progetto segreto per abbattere il regime
+					di Castro con lo sbarco nella baia dei Porci, la crisi dei missili
+					di Cuba, gli antefatti della guerra del Vietnam e l'affermarsi del
+					movimento per i diritti civili degli afroamericani.Kennedy fu
+					assassinato il 22 novembre 1963 a Dallas, in Texas. Lee Harvey
+					Oswald fu accusato dell'omicidio e fu a sua volta ucciso, due
+					giorni dopo, da Jack Ruby, prima che potesse essere processato. La
+					Commissione Warren concluse che Oswald aveva agito da solo;
+					tuttavia nel 1979 la United States House Select Committee on
+					Assassinations dichiar&oacute; che l'atto di Oswald era stato
+					probabilmente frutto di una cospirazione, con l'appoggio della CIA,
+					il cui ex-direttore Allen Dulles, ancora potente, avrebbe avuto
+					rancore per essere stato silurato da Kennedy dopo il fallimento
+					dell'invasione di Cuba.[3] La questione se Oswald avesse o meno
+					agito da solo rimane dibattuta, con l'esistenza di numerose teorie
+					cospirazioniste. L'assassinio di Kennedy fu un evento focale nella
+					storia degli Stati Uniti per l'impatto che ebbe sulla nazione e
+					sulla politica del Paese. La figura di Kennedy continua tuttora a
+					ricevere stima e apprezzamento.[4]
+				</article>
+			</div>
+		</div>
+
+	</section>
+	<div class="row">
+		<div class="col-lg-1 col-md-1 col-sm-1"></div>
+		<ul class="pagination pagination-lg col-lg-2 col-md-2 col-sm-2">
+			<li><a href="javascript:jumbotronModifier('art-1')">1</a></li>
+			<li><a href="javascript:jumbotronModifier('art-2')">2</a></li>
+			<li><a href="javascript:jumbotronModifier('art-3')">3</a></li>
+		</ul>
+	</div>
+
+
+
+	<footer>
+		<div class="col-lg-1 col-md-1 col-sm-1"></div>
+		<a class="col-lg-4 col-md-4 col-sm-4" href="https://www.wikipedia.org">
+			Godiamoci <strong>Wikipedia</strong> finch&eacute; c'&eacute;
+		</a>
+	</footer>
+</body>
+</html>

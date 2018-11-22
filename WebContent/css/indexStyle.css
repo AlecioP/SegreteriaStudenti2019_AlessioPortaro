@@ -1,0 +1,61 @@
+section {
+	color: brown;
+	font-family: sans-serif;
+}
+
+nav+header {
+	position: relative;
+	top: 4em;
+	margin-bottom: 4em;
+}
+
+h1 {
+	text-shadow: 3px 1px blue;
+}
+
+h2#welcome {
+	display: inline;
+}
+
+p.inline-p {
+	display : inline;
+}
+
+aside{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+article#art-1,article#art-2 {
+	visibility: hidden;
+	position: fixed;
+}
+
+article#art-3{
+	visibility : visible;
+	position: static;
+}
+
+.my-jumbotron {
+	background-color: #00ccff;
+	align-items: center;
+	border : 5px solid #ffcc00;
+	
+}
+
+.selected-art {
+	padding: 30%;
+	padding-top : 0.5em;
+	padding-bottom : 0.5em;
+	color : white;
+}
+
+article>header,article a {
+	font-size : 1.5em;
+	color : black;
+}
+
+ul.pagination {
+	margin-left : 2em;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+
+</head>
+<body>
+<header>
+	<h1>Iscrivi un nuovo studente</h1>
+	<h2>Compila il seguente form</h2>
+	<form id="modulo1" class="moduloRegistrazione" method="post" action="inviaDatiStudente">
+		<div><label class="etichetta" for="matricola">Matricola</label><input class="valore campo" name="matricola" type="text" /></div>
+		<div><label class="etichetta" for="nome">Nome</label><input class="valore campo" name="nome" type="text" /></div>
+		<div><label class="etichetta" for="cognome">Cognome</label><input class="valore campo" name="cognome campo" type="text" /></div>
+		<div><label class="etichetta" for="dataNascita">Data di nascita</label><input class="valore campo" name="dataNascita" type="date" /></div>
+		<div><label class="etichetta" for="password">Password</label><input class="valore campo" name="password" type="password" /></div>
+		<div><label class="etichetta" for="password2">Conferma Password</label><input class="valore campo" name="password2" type="password" /></div>
+		<div><label class="etichetta" for="dipartimento">Dipartimento</label>
+			<select class="valore campo" name="dipartimento">
+				<option>---</option>
+				<option>Matematica e Informatica</option>
+				<option>Economia</option>
+			</select>
+		</div>
+		<div><label class="etichetta" for="corsoDiLaurea">Corso di Laurea</label>
+			<select class="valore campo" name="corsoDiLaurea">
+				<option>---</option>
+				<optgroup label="Matematica e Informatica">
+					<option value="informatica">Informatica</option>
+					<option value="matematica">Matematica</option>
+				</optgroup>
+				<optgroup label="Economia">
+					<option value="ecoAz">Economia Aziendale</option>
+				</optgroup>
+			</select>
+		</div>
+		<input type="submit" />
+		<input type="reset" />
+	</form>
+	
+	
+	
+	
+	
+	
+	
+	
+</header>
+</body>
+</html>
