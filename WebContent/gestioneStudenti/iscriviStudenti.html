@@ -1,54 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>Iscrivi Studente</title>
 
-<link rel="stylesheet" href="../css/common.css" type="text/css" />
+
+<!-- Style -->
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css"
+	type="text/css" />
+<!-- Poichè lo stile custom è più importante lo pongo come ultimo per essere scelto in caso di ambiguità -->
+<link rel="stylesheet" href="../css/form.css" type="text/css" />
+<!-- Scripts -->
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/bootstrapConverter.js"></script>
 
 
 </head>
 <body>
-<header>
-	<h1>Iscrivi un nuovo studente</h1>
-	<h2>Compila il seguente form</h2>
-	<form id="modulo1" class="moduloRegistrazione" method="post" action="inviaDatiStudente">
-		<div><label class="etichetta" for="matricola">Matricola</label><input class="valore campo" name="matricola" type="text" /></div>
-		<div><label class="etichetta" for="nome">Nome</label><input class="valore campo" name="nome" type="text" /></div>
-		<div><label class="etichetta" for="cognome">Cognome</label><input class="valore campo" name="cognome campo" type="text" /></div>
-		<div><label class="etichetta" for="dataNascita">Data di nascita</label><input class="valore campo" name="dataNascita" type="date" /></div>
-		<div><label class="etichetta" for="password">Password</label><input class="valore campo" name="password" type="password" /></div>
-		<div><label class="etichetta" for="password2">Conferma Password</label><input class="valore campo" name="password2" type="password" /></div>
-		<div><label class="etichetta" for="dipartimento">Dipartimento</label>
-			<select class="valore campo" name="dipartimento">
-				<option>---</option>
-				<option>Matematica e Informatica</option>
-				<option>Economia</option>
-			</select>
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<ul class="nav navbar-nav">
+			<li class="nav-item"><a href="../">Home</a></li>
+			<li class="nav-item dropdown"><a href="#"
+				class="nav-link dropdown-toggle" data-toggle="dropdown">Studenti</a>
+				<ul class="dropdown-menu">
+					<li><a href="studenti.html"
+						class="dropdown-item">Elenco Studenti</a></li>
+					<li><a href="#">Studenti per corso</a></li>
+					<li><a href="#"
+						class="dropdown-item">Iscrivi uno studente</a></li>
+				</ul></li>
+			<li class="nav-item"><a href="#">Corsi</a></li>
+			<li class="nav-item"><a href="#">Corsi di laurea</a></li>
+			<li class="nav-item"><a href="#">Dipartimenti</a></li>
+		</ul>
+	</nav>
+
+	<header>
+		<div class="row">
+			<div class="myCol-4"></div>
+
+			<h1 class="myCol-5">Iscrivi un nuovo studente</h1>
+
 		</div>
-		<div><label class="etichetta" for="corsoDiLaurea">Corso di Laurea</label>
-			<select class="valore campo" name="corsoDiLaurea">
-				<option>---</option>
-				<optgroup label="Matematica e Informatica">
-					<option value="informatica">Informatica</option>
-					<option value="matematica">Matematica</option>
-				</optgroup>
-				<optgroup label="Economia">
-					<option value="ecoAz">Economia Aziendale</option>
-				</optgroup>
-			</select>
+
+	</header>
+
+	<div class="row form-container">
+		<div class="myCol-1"></div>
+		<div class="myCol-10" id="central-element-container">
+			<div id="side-img-container" class="mycol-6">
+				<figure>
+					<img class="custom-img" alt="library" src="../img/library.jpg">
+				</figure>
+			</div>
+			<!--  <div class="myCol-1"></div> -->
+			<form class="myCol-6" id="modulo1" method="post" action="">
+				<div class="row form-title">
+					<div class=""></div>
+					<h2 class="myCol-12">Compila il seguente form</h2>
+
+				</div>
+				<fieldset id="anagrafica">
+					<legend>Anagrafica</legend>
+					<div class="row">
+						<label class="mycol-4" for="nome">Nome:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="nome" type="text"
+							placeholder="Ex. Mario" />
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="cognome">Cognome:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="cognome campo" type="text"
+							placeholder="Ex. Rossi" />
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="dataNascita">Nato il:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="dataNascita" type="date" />
+					</div>
+				</fieldset>
+				<fieldset id="uni">
+					<legend>Universit&aacute;</legend>
+					<div class="row">
+						<label class="mycol-4" for="matricola">Matricola:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="matricola" type="text"
+							placeholder="Ex. 999--999" />
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="dipartimento">Dipartimento:</label>
+						<div class="mycol-2 form-padder"></div>
+						<select class="mycol-6" name="dipartimento">
+							<option>---</option>
+							<option>Matematica e Informatica</option>
+							<option>Economia</option>
+						</select>
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="corsoDiLaurea">CdS:</label>
+						<div class="mycol-2 form-padder"></div>
+						<select class="mycol-6" name="corsoDiLaurea">
+							<option>---</option>
+							<optgroup label="Matematica e Informatica">
+								<option value="informatica">Informatica</option>
+								<option value="matematica">Matematica</option>
+							</optgroup>
+							<optgroup label="Economia">
+								<option value="ecoAz">Economia Aziendale</option>
+							</optgroup>
+						</select>
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="password">Password:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="password" type="password" />
+					</div>
+					<div class="row">
+						<label class="mycol-4" for="password2">Conferma:</label>
+						<div class="mycol-2 form-padder"></div>
+						<input class="mycol-6" name="password2" type="password" />
+					</div>
+				</fieldset>
+				<fieldset id="buttons">
+					<legend id="buttons-legend">Invia Dati</legend>
+					<input class="btn btn-primary" type="submit" /> <input
+						class="btn btn-warning" type="reset" />
+				</fieldset>
+			</form>
 		</div>
-		<input type="submit" />
-		<input type="reset" />
-	</form>
-	
-	
-	
-	
-	
-	
-	
-	
-</header>
+	</div>
+
 </body>
 </html>

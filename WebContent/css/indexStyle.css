@@ -1,3 +1,9 @@
+@charset "UTF-8";
+
+body {
+	background-image: url("../img/george-condo.jpg");
+}
+
 section {
 	color: brown;
 	font-family: sans-serif;
@@ -13,12 +19,14 @@ h1 {
 	text-shadow: 3px 1px blue;
 }
 
-h2#welcome {
+h2#welcome{
 	display: inline;
+	text-shadow: 3px 1px blue;
 }
 
 p.inline-p {
 	display : inline;
+	text-shadow: 1px 1px white;
 }
 
 aside{

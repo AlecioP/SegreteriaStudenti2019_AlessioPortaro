@@ -1,0 +1,91 @@
+@charset "UTF-8";
+
+body {
+	background-color: #94b8b8;
+}
+
+h1 {
+	display : inline-block;
+	margin :0em;
+	border : 0em;
+	padding : 0em;
+}
+
+header {
+	margin-bottom: 5em;
+	position: relative;
+	top : 4em;
+}
+
+form {
+	/*border : 1px solid black;*/
+	margin-bottom : 7em;
+}
+
+div#side-img-container {
+	/*border : 1px solid red;*/
+	margin : 0em;
+	padding : 0em;
+	border-right: 3px solid blue;
+}
+
+div#central-element-container {
+	background-color: #006600;
+	padding : 0em;
+	border : 3px solid blue;
+}
+
+img.custom-img {
+	/*border : 1px solid red;*/
+	padding : 0em;
+	margin : 0em;
+	border : 0em;
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	border : 0em;
+	padding : 0em;
+	margin : 0em;
+}
+
+input[type="text"],input[type="password"] {
+	margin : 0em;
+	border : 1px solid #b8b894;
+	padding : 0em;
+	background-color: #94b8b8;
+}
+
+div.form-padder {
+	margin : 0em;
+	border : 0em;
+	padding : 0em;
+}
+
+form label {
+	font-family: monospace;
+	font-size: 2em;
+	color: #b8b894;
+}
+
+legend#buttons-legend {
+	font-size: 0.75em;
+	color : black;
+}
+
+h2 {
+	margin : 0em;
+	border : 0em;
+	padding : 0em;
+	margin-bottom: 3em;
+	margin-top : 2em;
+	font-style: italic;
+	font-family: monospace;
+}
+
+div.form-title {
+	margin : 0em;
+	border : 0em;
+	padding : 0em;
+}
